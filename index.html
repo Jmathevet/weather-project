@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/3e5e5e865a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row search">
+        <div class="col-sm-9">
+          <form id="search-form">
+            <input
+              class="enter-city"
+              type="text"
+              placeholder=" Search for a city"
+              autocomplete="off"
+              id="city-input"
+             
+            />
+            <input class="go" id="go" type="submit" value="Go" />
+            <button class="current-location" id="current-location">
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </form>
+          <div class="row app-left">
+            <div class="col-sm-6 current-weather-logo">
+              <img class="suncloud" src="img/suncloud.svg" alt="suncloud" />
+            </div>
+            <div class="col-sm-6 current-info">
+              <p class="today">
+                <span id="current-day"></span> <small> |</small>
+                <span id="current-time"> </span>
+              </p>
+              <h1 id="searched-city">Dublin</h1>
+              <h2>
+                <span id="current-temperature">10</span> °
+                <div
+                  class="btn-group btn-group-toggle degrees"
+                  data-toggle="buttons"
+                >
+                  <label id="celsius-label" class="btn btn-light active">
+                    C
+                  </label>
+                  <label id="fahrenheit-label" class="btn btn-light"> F </label>
+                </div>
+              </h2>
+            </div>
+            <div class="col-sm-6">
+              <div class="row extra-info">
+                <div class="col-sm-7 precipitation">
+                  <i class="fas fa-umbrella"></i> <small> Precipitation</small>
+                </div>
+                <div class="col-sm-4 wind data"> <span id="precipitation"> 10 </span>cm</div>
+
+                <div class="col-sm-7 wind">
+                  <i class="fas fa-wind"></i> <small> Wind</small>
+                </div>
+                <div class="col-sm-5 wind data"> <span id="wind"> 10 </span> km/h</div>
+
+                <div class="col-sm-7 humidity">
+                  <i class="fas fa-tint"></i> <small> Humidity </small>
+                </div>
+                <div class="col-sm-5 humidity data">
+              <span id="humidity">10 </span> %</div>
+
+                <div class="col-sm-7 sunrise">
+                  <i class="far fa-sun"></i> <small> Sunrise</small>
+                </div>
+                <div class="col-sm-5 sunrise data">7:20 am</div>
+
+                <div class="col-sm-7 sunset">
+                  <i class="far fa-moon"></i> <small> Sunset</small>
+                </div>
+                <div class="col-sm-5 sunset data">7:22 pm</div>
+              </div>
+            </div>
+            <div class="col-sm-6 image">
+              <div class="row">
+                <img
+                  class="weather-image"
+                  src="img/weather.svg"
+                  alt="weather image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 app-right">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">Sun.</div>
+                <div class="card-body">
+                  <span class="emoji">☀️</span>
+                  <span class="week-degrees">14° | 8°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">Mon.</div>
+                <div class="card-body">
+                  <span class="emoji">🌧</span>
+                  <span class="week-degrees"> 16° | 7°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">Tue.</div>
+                <div class="card-body">
+                  <span class="emoji">🌤</span>
+                  <span class="week-degrees">16° | 10°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">Wed.</div>
+                <div class="card-body">
+                  <span class="emoji">🌧</span>
+                  <span class="week-degrees"> 14° | 8° </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">Thu.</div>
+                <div class="card-body">
+                  <span class="emoji">🌧</span>
+                  <span class="week-degrees"></span>
+                  <span class="week-degrees">13° | 8°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>Coded by Julie Mathevet</footer>
+    <script src="src/script.js"></script>
+  </body>
+</html>
