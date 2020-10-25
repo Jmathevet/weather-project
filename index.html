@@ -41,14 +41,15 @@
           </form>
           <div class="row app-left">
             <div class="col-sm-6 current-weather-logo">
-              <img class="suncloud" src="img/suncloud.svg" alt="suncloud" />
+              <img id="current-icon" class="suncloud" src="http://openweathermap.org/img/wn/10d@2x.png" alt="suncloud" />
+              <div class="description" id="description"> test</div>
             </div>
             <div class="col-sm-6 current-info">
               <p class="today">
                 <span id="current-day"></span> <small> |</small>
                 <span id="current-time"> </span>
               </p>
-              <h1 id="searched-city">Dublin</h1>
+              <h1> <span id="searched-city">Dublin</span>, <span id="searched-country">IE</span> </h1>
               <h2>
                 <span id="current-temperature">10</span> °
                 <div
@@ -83,12 +84,12 @@
                 <div class="col-sm-7 sunrise">
                   <i class="far fa-sun"></i> <small> Sunrise</small>
                 </div>
-                <div class="col-sm-5 sunrise data">7:20 am</div>
+                <div class="col-sm-5 sunrise data"> <span id="sunrise-time" > 7:20 am</span> </div>
 
                 <div class="col-sm-7 sunset">
                   <i class="far fa-moon"></i> <small> Sunset</small>
                 </div>
-                <div class="col-sm-5 sunset data">7:22 pm</div>
+                <div class="col-sm-5 sunset data"> <span id="sunset-time" > 7:22 pm</span> </div>
               </div>
             </div>
             <div class="col-sm-6 image">

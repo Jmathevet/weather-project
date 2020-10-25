@@ -1,6 +1,5 @@
-let now = new Date();
-
 function currentDayTime() {
+  let now = new Date();
   let days = [
     "Sunday",
     "Monday",
@@ -20,30 +19,44 @@ function currentDayTime() {
     minute = `0${minute}`;
   }
 
-  let currentDay = document.querySelector("#current-day");
-  currentDay.innerHTML = `${day}`;
-  let currentTime = document.querySelector("#current-time");
-  currentTime.innerHTML = `${hour} : ${minute}`;
+ document.querySelector("#current-day").innerHTML = `${day}`;
+ document.querySelector("#current-time").innerHTML = `${hour} : ${minute}`;
 }
 
 currentDayTime();
 
+
 function searchedCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input");
-  let searchedCity = document.querySelector("#searched-city");
-  searchedCity.innerHTML = city.value;
+ document.querySelector("#searched-city").innerHTML = city.value;
 }
 
 function currentTempCelsius (response) {
 let temperature = Math.round(response.data.main.temp);
 document.querySelector("#current-temperature").innerHTML = temperature;
+document.querySelector("#searched-country").innerHTML = response.data.sys.country;
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-let celsiusLabel = document.querySelector("#celsius-label");
-let fahrenheitLabel = document.querySelector("#fahrenheit-label");
-celsiusLabel.classList.add("active");
-fahrenheitLabel.classList.remove("active");
+document.querySelector("#current-icon").setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+document.querySelector("#celsius-label").classList.add("active");
+document.querySelector("#fahrenheit-label").classList.remove("active");
+document.querySelector("#description").innerHTML = response.data.weather[0].description;
+let unixSunrise = response.data.sys.sunrise
+let sunriseDate = new Date (unixSunrise*1000)
+let sunriseHours = sunriseDate.getHours();
+let sunriseMinutes = sunriseDate.getMinutes();
+let formattedSunrise = `${sunriseHours}:${sunriseMinutes}`;
+document.querySelector("#sunrise-time").innerHTML = formattedSunrise;
+let unixSunset = response.data.sys.sunset;
+let sunsetDate = new Date (unixSunset*1000);
+let sunsetHours = sunsetDate.getHours();
+let sunsetMinutes = sunsetDate.getMinutes();
+let formattedSunset = `${sunsetHours}:${sunsetMinutes}`;
+document.querySelector("#sunset-time").innerHTML = formattedSunset;
 }
 
 function getTempCelsius() {
@@ -68,10 +81,9 @@ let temperature = Math.round(response.data.main.temp);
 document.querySelector("#current-temperature").innerHTML = temperature;
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  let celsiusLabel = document.querySelector("#celsius-label");
-  let fahrenheitLabel = document.querySelector("#fahrenheit-label");
-  fahrenheitLabel.classList.add("active");
-  celsiusLabel.classList.remove("active");
+document.querySelector("#celsius-label").classList.remove("active");
+document.querySelector("#fahrenheit-label").classList.add("active");
+
 }
 
 function getTempFahrenheit() {

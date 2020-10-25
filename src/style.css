@@ -1,11 +1,11 @@
 h1 {
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
 }
 h2 {
-  font-size: 50px;
+  font-size: 35px;
   margin-top: 20px;
   text-align: center;
 }
@@ -74,13 +74,13 @@ footer {
   text-align: center;
 }
 .suncloud {
-  width: 250px;
+  width: 110px;
 }
 .current-info {
   padding: 30px;
 }
 .today {
-  font-size: 25px;
+  font-size: 17px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -185,4 +185,7 @@ footer {
   font-weight: bold;
   font-size: 17px;
   color: #016aa3;
+}
+.description {
+  text-transform: capitalize;
 }
