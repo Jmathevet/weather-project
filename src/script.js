@@ -25,6 +25,13 @@ function currentDayTime() {
 
 currentDayTime();
 
+function formatDate (timestamp) {
+let date = new Date (timestamp)
+let hours = date.getHours();
+let minutes = date.getMinutes();
+return `${hours}:${minutes}`;
+}
+
 
 function searchedCity(event) {
   event.preventDefault();
@@ -45,18 +52,8 @@ document.querySelector("#current-icon").setAttribute(
 document.querySelector("#celsius-label").classList.add("active");
 document.querySelector("#fahrenheit-label").classList.remove("active");
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
-let unixSunrise = response.data.sys.sunrise
-let sunriseDate = new Date (unixSunrise*1000)
-let sunriseHours = sunriseDate.getHours();
-let sunriseMinutes = sunriseDate.getMinutes();
-let formattedSunrise = `${sunriseHours}:${sunriseMinutes}`;
-document.querySelector("#sunrise-time").innerHTML = formattedSunrise;
-let unixSunset = response.data.sys.sunset;
-let sunsetDate = new Date (unixSunset*1000);
-let sunsetHours = sunsetDate.getHours();
-let sunsetMinutes = sunsetDate.getMinutes();
-let formattedSunset = `${sunsetHours}:${sunsetMinutes}`;
-document.querySelector("#sunset-time").innerHTML = formattedSunset;
+document.querySelector("#sunrise-time").innerHTML = formatDate(response.data.sys.sunrise*1000);
+document.querySelector("#sunset-time").innerHTML = formatDate(response.data.sys.sunset*1000);
 }
 
 function getTempCelsius() {
