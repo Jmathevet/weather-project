@@ -33,15 +33,10 @@ return `${hours}:${minutes}`;
 }
 
 
-function searchedCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input");
- document.querySelector("#searched-city").innerHTML = city.value;
-}
-
 function currentTempCelsius (response) {
-let temperature = Math.round(response.data.main.temp);
-document.querySelector("#current-temperature").innerHTML = temperature;
+celsiusTemperature = Math.round(response.data.main.temp);
+document.querySelector("#current-temperature").innerHTML = celsiusTemperature;
+document.querySelector("#searched-city").innerHTML = response.data.name;
 document.querySelector("#searched-country").innerHTML = response.data.sys.country;
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
@@ -49,50 +44,48 @@ document.querySelector("#current-icon").setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-document.querySelector("#celsius-label").classList.add("active");
-document.querySelector("#fahrenheit-label").classList.remove("active");
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 document.querySelector("#sunrise-time").innerHTML = formatDate(response.data.sys.sunrise*1000);
 document.querySelector("#sunset-time").innerHTML = formatDate(response.data.sys.sunset*1000);
 }
 
-function getTempCelsius() {
-let city = document.querySelector("#city-input").value;
+function searchedCity(city) {
 let key = "66c3da230a807013d743b01ba23894fa";
 let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
 axios.get(url).then(currentTempCelsius)
 }
 
-let form = document.querySelector("#search-form");
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  searchedCity(cityInputElement.value);
+}
 
-form.addEventListener("submit", searchedCity);
-
-form.addEventListener("submit", getTempCelsius);
-
-let celsiusDegrees = document.querySelector("#celsius-label");
-
-celsiusDegrees.addEventListener("click", getTempCelsius);
-
-function currentTempFahrenheit (response) {
-let temperature = Math.round(response.data.main.temp);
-document.querySelector("#current-temperature").innerHTML = temperature;
-document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+function getTempFahrenheit(event) {
+  event.preventDefault();
+let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+document.querySelector("#current-temperature").innerHTML = Math.round(fahrenheiTemperature);
 document.querySelector("#celsius-label").classList.remove("active");
 document.querySelector("#fahrenheit-label").classList.add("active");
-
 }
 
-function getTempFahrenheit() {
-let city = document.querySelector("#city-input").value;
-let key = "66c3da230a807013d743b01ba23894fa";
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=imperial`;
-axios.get(url).then(currentTempFahrenheit)
+function getCelsiusTemp(event) {
+event.preventDefault();
+document.querySelector("#celsius-label").classList.add("active");
+document.querySelector("#fahrenheit-label").classList.remove("active");
+document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitDegrees = document.querySelector("#fahrenheit-label");
-
 fahrenheitDegrees.addEventListener("click", getTempFahrenheit);
+
+let celsiusDegrees = document.querySelector("#celsius-label");
+celsiusDegrees.addEventListener("click", getCelsiusTemp);
 
 
 function showTemp(response) {
@@ -117,3 +110,5 @@ navigator.geolocation.getCurrentPosition(showPosition);
 let button = document.querySelector("#current-location");
 
 button.addEventListener("click", getCurrentPosition);
+
+searchedCity("Paris")
