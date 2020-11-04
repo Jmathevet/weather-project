@@ -14,12 +14,9 @@
       src="https://kit.fontawesome.com/3e5e5e865a.js"
       crossorigin="anonymous"
     ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css" />
-    <title>Document</title>
+    <title>Weather app</title>
   </head>
   <body>
     <div class="container">
@@ -42,12 +39,11 @@
           <div class="row app-left">
             <div class="col-sm-6 current-weather-logo">
               <img id="current-icon" class="suncloud" src="http://openweathermap.org/img/wn/10d@2x.png" alt="suncloud" />
-              <div class="description" id="description"> test</div>
+              <div class="description" id="description"> ok</div>
             </div>
             <div class="col-sm-6 current-info">
               <p class="today">
-                <span id="current-day"></span> <small> |</small>
-                <span id="current-time"> </span>
+                <span id="current-day"></span>
               </p>
               <h1> <span id="searched-city">Dublin</span>, <span id="searched-country">IE</span> </h1>
               <h2>
@@ -65,10 +61,6 @@
             </div>
             <div class="col-sm-6">
               <div class="row extra-info">
-                <div class="col-sm-7 precipitation">
-                  <i class="fas fa-umbrella"></i> <small> Precipitation</small>
-                </div>
-                <div class="col-sm-4 wind data"> <span id="precipitation"> 10 </span>cm</div>
 
                 <div class="col-sm-7 wind">
                   <i class="fas fa-wind"></i> <small> Wind</small>
@@ -80,7 +72,10 @@
                 </div>
                 <div class="col-sm-5 humidity data">
               <span id="humidity">10 </span> %</div>
-
+            </div>
+          </div>
+              <div class="col-sm-6">
+              <div class="row extra-info">
                 <div class="col-sm-7 sunrise">
                   <i class="far fa-sun"></i> <small> Sunrise</small>
                 </div>
@@ -92,71 +87,16 @@
                 <div class="col-sm-5 sunset data"> <span id="sunset-time" > 7:22 pm</span> </div>
               </div>
             </div>
-            <div class="col-sm-6 image">
-              <div class="row">
-                <img
-                  class="weather-image"
-                  src="img/weather.svg"
-                  alt="weather image"
-                />
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
-
         <div class="col-sm-3 app-right">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12" id="forecast">
               <div class="card">
                 <div class="card-header">Sun.</div>
                 <div class="card-body">
                   <span class="emoji">☀️</span>
                   <span class="week-degrees">14° | 8°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">Mon.</div>
-                <div class="card-body">
-                  <span class="emoji">🌧</span>
-                  <span class="week-degrees"> 16° | 7°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">Tue.</div>
-                <div class="card-body">
-                  <span class="emoji">🌤</span>
-                  <span class="week-degrees">16° | 10°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">Wed.</div>
-                <div class="card-body">
-                  <span class="emoji">🌧</span>
-                  <span class="week-degrees"> 14° | 8° </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">Thu.</div>
-                <div class="card-body">
-                  <span class="emoji">🌧</span>
-                  <span class="week-degrees"></span>
-                  <span class="week-degrees">13° | 8°</span>
                 </div>
               </div>
             </div>

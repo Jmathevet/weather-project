@@ -10,7 +10,7 @@ h2 {
   text-align: center;
 }
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 footer {
   text-align: center;
@@ -21,14 +21,14 @@ footer {
 .container {
   border: 1px solid lightgray;
   border-radius: 4px;
-  max-width: 900px;
+  max-width: 800px;
   margin: 15px auto 0 auto;
   padding: 35px 40px 20px 30px;
   background-image: linear-gradient(to top, white 0%, #ace0f9 100%);
   box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.1);
 }
 .enter-city {
-  width: 70%;
+  width: 60%;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   border: 1px solid grey;
@@ -72,12 +72,24 @@ footer {
 }
 .current-weather-logo {
   text-align: center;
+  margin-bottom: -80px;
 }
 .suncloud {
-  width: 110px;
+  width: 120px;
+  padding: 0;
 }
+
+.description {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
 .current-info {
-  padding: 30px;
+  padding: 20px;
+}
+.currentTime {
+  font-weight: 600;
+  font-size: 15px;
 }
 .today {
   font-size: 17px;
@@ -111,10 +123,6 @@ footer {
 }
 .fa-moon {
   color: darkblue;
-  margin-right: 25px;
-}
-.fa-umbrella {
-  color: #768afd;
   margin-right: 25px;
 }
 
@@ -160,25 +168,23 @@ footer {
   font-size: 12px;
   text-transform: uppercase;
   padding: 5px;
-  color: white;
+  color: grey;
   font-weight: bolder;
-  background: #ff5252;
 }
 .card-body {
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
-  padding: 5px;
+  padding: 9px;
 }
 .card {
-  margin: 7px;
+  margin: 0 auto 10px 0;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   opacity: 0.9;
   height: 99px;
 }
-.emoji {
-  margin-right: 15px;
-  font-size: 30px;
-  line-height: 60px;
+.icon {
+  width: 48px;
+  margin-left: -13px;
 }
 .week-degrees {
   margin-top: -20px;
