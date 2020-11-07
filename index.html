@@ -20,8 +20,11 @@
   </head>
   <body>
     <div class="container">
+      <img class="cloud" src="img/cloud 2.png" alt="test">
+      <img class="cloud2" src="img/cloud.png" alt="test">
       <div class="row search">
         <div class="col-sm-9">
+          
           <form id="search-form">
             <input
               class="enter-city"
@@ -37,56 +40,81 @@
             </button>
           </form>
           <div class="row app-left">
-            <div class="col-sm-6 current-weather-logo">
-              <img id="current-icon" class="suncloud" src="http://openweathermap.org/img/wn/10d@2x.png" alt="suncloud" />
-              <div class="description" id="description"> ok</div>
-            </div>
-            <div class="col-sm-6 current-info">
-              <p class="today">
-                <span id="current-day"></span>
-              </p>
-              <h1> <span id="searched-city">Dublin</span>, <span id="searched-country">IE</span> </h1>
-              <h2>
-                <span id="current-temperature">10</span> °
-                <div
-                  class="btn-group btn-group-toggle degrees"
-                  data-toggle="buttons"
-                >
-                  <label id="celsius-label" class="btn btn-light active">
-                    C
-                  </label>
-                  <label id="fahrenheit-label" class="btn btn-light"> F </label>
-                </div>
-              </h2>
-            </div>
-            <div class="col-sm-6">
+<div class="col-sm-6 current-info">
+       
+<p class="today">
+ <span id="current-day"></span>
+  </p>
+   <h1> <span id="searched-city">Dublin</span>, <span id="searched-country">IE</span> </h1>
+     <h2>
+      <span class="temperature" id="current-temperature">10</span> °
+       <div class="btn-group btn-group-toggle degrees" data-toggle="buttons">
+        <label id="celsius-label" class="btn btn-light active">C</label>
+         <label id="fahrenheit-label" class="btn btn-light"> F </label>
+        </div>
+        
+<div class="logo-widget">
+      <img id="current-icon" class="suncloud" src="http://openweathermap.org/img/wn/10d@2x.png" alt="suncloud" />
+      <div class="description" id="description"> ok</div>
+      </div>
+  </h2>
+
+                         
+</div>
+
+            <div class="col-sm-6 list">
               <div class="row extra-info">
+
+                      <div class="col-sm-7 feelsLike">
+                        <i class="fas fa-feather"></i><small>Feels like</small>
+                      </div>
+                      
+                      <div class="col-sm-3 feelsLike data">
+                        <span  id="feels-like">10 </span> °
+                      </div>
+                   
+                      <div class="col-sm-7 max">
+                        <i class="fas fa-temperature-high"></i><small>Max. temp.</small>
+                      </div>
+                      
+                      <div class="col-sm-3 max data">
+                        <span id="max">10 </span> °</div>
+                      
+                      <div class="col-sm-7 min">
+                        <i class="fas fa-temperature-low"></i><small>Min. temp.</small>
+                      </div>
+                      
+                      <div class="col-sm-3 min data">
+                        <span id="min">10 </span> °</div>
 
                 <div class="col-sm-7 wind">
                   <i class="fas fa-wind"></i> <small> Wind</small>
                 </div>
-                <div class="col-sm-5 wind data"> <span id="wind"> 10 </span> km/h</div>
+                <div class="col-sm-3 wind data"> <span id="wind"> 10 </span> km/h</div>
+
 
                 <div class="col-sm-7 humidity">
                   <i class="fas fa-tint"></i> <small> Humidity </small>
                 </div>
-                <div class="col-sm-5 humidity data">
-              <span id="humidity">10 </span> %</div>
-            </div>
-          </div>
-              <div class="col-sm-6">
-              <div class="row extra-info">
+
+                <div class="col-sm-3 humidity data">
+                  <span id="humidity">10 </span> %</div>
+         
                 <div class="col-sm-7 sunrise">
                   <i class="far fa-sun"></i> <small> Sunrise</small>
                 </div>
-                <div class="col-sm-5 sunrise data"> <span id="sunrise-time" > 7:20 am</span> </div>
+                <div class="col-sm-3 sunrise data"> <span id="sunrise-time" > 7:20 am</span> </div>
 
                 <div class="col-sm-7 sunset">
                   <i class="far fa-moon"></i> <small> Sunset</small>
                 </div>
-                <div class="col-sm-5 sunset data"> <span id="sunset-time" > 7:22 pm</span> </div>
-              </div>
+                <div class="col-sm-3 sunset data"> <span id="sunset-time" > 7:22 pm</span> </div>
             </div>
+            </div>
+
+        
+
+
           </div> 
         </div>
         <div class="col-sm-3 app-right">

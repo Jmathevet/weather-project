@@ -32,10 +32,16 @@ function formatHours(timestamp) {
 function currentTempCelsius (response) {
 document.querySelector("#current-day").innerHTML = currentDayTime(response.data.dt * 1000);
 celsiusTemperature = Math.round(response.data.main.temp);
+feelsLikeTemp = Math.round(response.data.main.feels_like);
+minTemp = Math.round(response.data.main.temp_min);
+maxTemp =  Math.round(response.data.main.temp_max);
 document.querySelector("#current-temperature").innerHTML = celsiusTemperature;
 document.querySelector("#searched-city").innerHTML = response.data.name;
 document.querySelector("#searched-country").innerHTML = response.data.sys.country;
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+document.querySelector("#feels-like").innerHTML = feelsLikeTemp;
+document.querySelector("#min").innerHTML = minTemp;
+document.querySelector("#max").innerHTML = maxTemp;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#current-icon").setAttribute(
     "src",
@@ -44,6 +50,7 @@ document.querySelector("#current-icon").setAttribute(
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 document.querySelector("#sunrise-time").innerHTML = formatHours(response.data.sys.sunrise*1000);
 document.querySelector("#sunset-time").innerHTML = formatHours(response.data.sys.sunset*1000);
+console.log(response.data)
 }
 
 function getForecast(response) {
@@ -87,6 +94,9 @@ function getTempFahrenheit(event) {
   event.preventDefault();
 let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
 document.querySelector("#current-temperature").innerHTML = Math.round(fahrenheiTemperature);
+document.querySelector("#feels-like").innerHTML = Math.round((feelsLikeTemp * 9) / 5 + 32);
+document.querySelector("#min").innerHTML = Math.round((minTemp* 9) / 5 + 32);
+document.querySelector("#max").innerHTML = Math.round((maxTemp* 9) / 5 + 32);
 document.querySelector("#celsius-label").classList.remove("active");
 document.querySelector("#fahrenheit-label").classList.add("active");
 }
@@ -96,9 +106,17 @@ event.preventDefault();
 document.querySelector("#celsius-label").classList.add("active");
 document.querySelector("#fahrenheit-label").classList.remove("active");
 document.querySelector("#current-temperature").innerHTML = Math.round(celsiusTemperature);
+document.querySelector("#feels-like").innerHTML = Math.round(feelsLikeTemp);
+document.querySelector("#min").innerHTML = Math.round(minTemp);
+document.querySelector("#max").innerHTML = Math.round(maxTemp);
 }
 
 let celsiusTemperature = null;
+let feelsLikeTemp = null;
+let minTemp = null;
+let maxTemp =null;
+let forecastMin = null;
+let forecastMax = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
