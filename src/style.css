@@ -27,7 +27,7 @@ footer {
   border-radius: 4px;
   max-width: 800px;
   margin: 15px auto 0 auto;
-  padding: 35px 40px 20px 30px;
+  padding: 35px 30px 20px;
   background-color: #cddcdc;
   background-color: #cddcdc;
   background-image: linear-gradient(to top, white 0%, #6297c2 100%);
@@ -73,10 +73,16 @@ footer {
 .temperature {
 }
 .app-left {
-  margin-top: 10px;
-  height: 90%;
-  padding: 20px;
-  padding-left: 0;
+  margin-top: 20px;
+  margin-left: 10px;
+
+  height: 80%;
+  padding-top: 20px;
+  padding-bottom: 2;
+  border: solid white 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 7px 2px 9px rgba(0, 0, 0, 0.1);
 }
 .current-weather-logo {
   text-align: center;
@@ -91,10 +97,8 @@ footer {
   font-weight: bolder;
 }
 .logo-widget {
-  display: block;
-  margin: 10px auto;
   padding: 20px;
-
+  margin: 0 auto;
   font-size: 20px;
   border-radius: 30px;
   width: 150px;
@@ -137,8 +141,8 @@ footer {
 }
 .extra-info {
   font-size: 20px;
-  padding-left: 35px;
-  padding-top: 25px;
+  padding-left: 10px;
+
   padding-bottom: 25px;
   margin: 10;
   line-height: 40px;
@@ -187,6 +191,8 @@ footer {
 .precipitation {
   padding: 5px;
   padding-top: 0;
+}
+.list {
 }
 
 .wind small {
