@@ -14,11 +14,14 @@
       src="https://kit.fontawesome.com/3e5e5e865a.js"
       crossorigin="anonymous"
     ></script>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gidugu&family=Jomhuria&family=Londrina+Shadow&family=Quicksand:wght@300;400;500;600;700&family=Recursive:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather app</title>
   </head>
   <body>
+
     <div class="container">
       <img class="cloud" src="img/cloud 2.png" alt="test">
       <img class="cloud2" src="img/cloud.png" alt="test">
@@ -39,9 +42,10 @@
               <i class="fas fa-map-marker-alt"></i>
             </button>
           </form>
-          <div class="row app-left">
-<div class="col-sm-6 current-info">
-       
+
+
+<div class="row app-left">
+<div class="col-sm-6 current-info">   
 <p class="today">
  <span id="current-day"></span>
   </p>
@@ -53,20 +57,18 @@
          <label id="fahrenheit-label" class="btn btn-light"> F </label>
         </div>
         
-<div class="logo-widget">
+      <div class="logo-widget">
       <img id="current-icon" class="suncloud" src="http://openweathermap.org/img/wn/10d@2x.png" alt="suncloud" />
       <div class="description" id="description"> ok</div>
       </div>
-  </h2>
-
-                         
+  </h2>                        
 </div>
 
             <div class="col-sm-6 list">
               <div class="row extra-info">
 
                       <div class="col-sm-7 feelsLike">
-                        <i class="fas fa-feather"></i><small>Feels like</small>
+                        <i class="fas fa-feather"></i><small class="indicators">Feels like</small>
                       </div>
                       
                       <div class="col-sm-3 feelsLike data">
@@ -74,49 +76,45 @@
                       </div>
                    
                       <div class="col-sm-7 max">
-                        <i class="fas fa-temperature-high"></i><small>Max. temp.</small>
+                        <i class="fas fa-temperature-high"></i><small class="indicators">Max. temp.</small>
                       </div>
                       
                       <div class="col-sm-3 max data">
                         <span id="max">10 </span> °</div>
                       
                       <div class="col-sm-7 min">
-                        <i class="fas fa-temperature-low"></i><small>Min. temp.</small>
+                        <i class="fas fa-temperature-low"></i><small class="indicators">Min. temp.</small>
                       </div>
                       
                       <div class="col-sm-3 min data">
                         <span id="min">10 </span> °</div>
 
                 <div class="col-sm-7 wind">
-                  <i class="fas fa-wind"></i> <small> Wind</small>
+                  <i class="fas fa-wind"></i> <small class="indicators"> Wind</small>
                 </div>
-                <div class="col-sm-3 wind data"> <span id="wind"> 10 </span> km/h</div>
+                <div class="col-sm-3 wind data"> <span id="wind"> 10 </span> <small>km/h</small> </div>
 
 
                 <div class="col-sm-7 humidity">
-                  <i class="fas fa-tint"></i> <small> Humidity </small>
+                  <i class="fas fa-tint"></i> <small class="indicators"> Humidity </small>
                 </div>
 
                 <div class="col-sm-3 humidity data">
                   <span id="humidity">10 </span> %</div>
          
                 <div class="col-sm-7 sunrise">
-                  <i class="far fa-sun"></i> <small> Sunrise</small>
+                  <i class="far fa-sun"></i> <small class="indicators"> Sunrise</small>
                 </div>
                 <div class="col-sm-3 sunrise data"> <span id="sunrise-time" > 7:20 am</span> </div>
 
                 <div class="col-sm-7 sunset">
-                  <i class="far fa-moon"></i> <small> Sunset</small>
+                  <i class="far fa-moon"></i> <small class="indicators"> Sunset</small>
                 </div>
                 <div class="col-sm-3 sunset data"> <span id="sunset-time" > 7:22 pm</span> </div>
             </div>
             </div>
-
-        
-
-
-          </div> 
-        </div>
+        </div> 
+  </div>
         <div class="col-sm-3 app-right">
           <div class="row">
             <div class="col-12" id="forecast">
@@ -132,7 +130,7 @@
         </div>
       </div>
     </div>
-    <footer> <a href="https://github.com/Jmathevet/weather-project">Open-source code</a> by Julie Mathevet </footer>
+    <footer> <a href="https://github.com/Jmathevet/weather-project" target="_blank">Open-source code</a> by Julie Mathevet </footer>
     <script src="src/script.js"></script>
   </body>
 </html>

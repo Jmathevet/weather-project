@@ -50,7 +50,7 @@ document.querySelector("#current-icon").setAttribute(
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 document.querySelector("#sunrise-time").innerHTML = formatHours(response.data.sys.sunrise*1000);
 document.querySelector("#sunset-time").innerHTML = formatHours(response.data.sys.sunset*1000);
-console.log(response.data)
+
 }
 
 function getForecast(response) {
@@ -63,10 +63,10 @@ function getForecast(response) {
     forecastElement.innerHTML += `
      <div class="col-12" id="forecast" >
       <div class="card">
-       <div class="card-header">${formatHours(forecast.dt * 1000)}</div>
+       <div class="card-header"> <span class="forecast-time"> ${formatHours(forecast.dt * 1000)} </span> <span class="forecast-description"> ${forecast.weather[0].main} </span></div>
         <div class="card-body">
+        <span class="week-degrees"> <strong> ${Math.round(forecast.main.temp_max)}° </strong>  <small>|  ${Math.round(forecast.main.temp_min)}° </small> </span>
           <img class="icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>      
-      <span class="week-degrees"> <strong> ${Math.round(forecast.main.temp_max)}° </strong>  <small>|  ${Math.round(forecast.main.temp_min)}° </small> </span>
     </div>
   </div>
   </div>

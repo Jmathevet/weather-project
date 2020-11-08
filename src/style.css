@@ -1,5 +1,5 @@
 h1 {
-  font-size: 30px;
+  font-size: 23px;
   margin-top: 20px;
   font-weight: bolder;
   text-align: center;
@@ -13,25 +13,38 @@ h2 {
   color: black;
 }
 body {
-  font-family: "Quicksand", sans-serif;
-  color: #57585b;
+  font-family: "Roboto", sans-serif;
 }
 footer {
   text-align: center;
   font-size: 13px;
   margin: 15px auto;
+  font-family: "Quicksand", sans-serif;
 }
-
+a {
+  color: #6497c2;
+}
 .container {
   border: 1px solid lightgray;
-  border-radius: 4px;
+  border-radius: 8px;
   max-width: 800px;
-  margin: 15px auto 0 auto;
-  padding: 35px 30px 20px;
+  margin: 40px auto 0 auto;
+  padding: 30px 30px 25px;
   background-color: #cddcdc;
-  background-color: #cddcdc;
-  background-image: linear-gradient(to top, white 0%, #6297c2 100%);
+  background-image: linear-gradient(to top, white -5%, #619ccc 100%);
   box-shadow: 2px 7px 7px rgba(0, 0, 0, 0.1);
+}
+.cloud {
+  width: 300px;
+  position: absolute;
+  left: 745px;
+  top: 210px;
+}
+.cloud2 {
+  width: 300px;
+  position: absolute;
+  left: 400px;
+  top: 45px;
 }
 .enter-city {
   width: 70%;
@@ -42,6 +55,7 @@ footer {
   padding: 5px;
   margin-left: 20px;
   margin-top: 10px;
+  margin-bottom: 12px;
 }
 .go {
   background: #ec6d4c;
@@ -56,218 +70,128 @@ footer {
 }
 .current-location {
   border-radius: 40px;
+
+  width: 32px;
   border: none;
   color: #4e6d52;
   margin-left: 10px;
   background: white;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 17px;
   padding: 4px 10px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   transition: 200ms ease-in-out;
 }
-.current-location:hover {
-  background: #4e6d52;
-  color: white;
+.fa-map-marker-alt {
+  transition: 250ms ease-in-out;
 }
-.temperature {
+
+.fa-map-marker-alt:hover {
+  color: #4a9b4a;
 }
+
 .app-left {
   margin-top: 20px;
   margin-left: 10px;
-
+  background-image: linear-gradient(
+    to left,
+    rgba(98, 155, 202, 0.2) -10%,
+    rgba(255, 255, 255, 0.01) 40%
+  );
   height: 80%;
-  padding-top: 20px;
-  padding-bottom: 2;
   border: solid white 1px;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 25px;
   box-shadow: 7px 2px 9px rgba(0, 0, 0, 0.1);
 }
-.current-weather-logo {
-  text-align: center;
-  margin-bottom: -80px;
-}
-.suncloud {
-  width: 100px;
-}
-
-.description {
-  text-transform: uppercase;
-  font-weight: bolder;
-}
-.logo-widget {
-  padding: 20px;
-  margin: 0 auto;
-  font-size: 20px;
-  border-radius: 30px;
-  width: 150px;
-}
-
 .current-info {
-  padding-right: 25px;
-  margin-top: 10px;
-}
-
-.cloud2 {
-  width: 300px;
-  position: absolute;
-  left: 600px;
-  top: 30px;
-}
-.cloud {
-  width: 300px;
-  position: absolute;
-  left: 700px;
-  top: 250px;
-}
-.currentTime {
-  font-weight: 600;
-  font-size: 15px;
+  padding-top: 25px;
+  border-right: white solid 1px;
+  height: 348px;
 }
 .today {
   color: #000;
-  font-size: 17px;
+  font-size: 22px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
 }
-.degrees {
-  margin-left: 10px;
+.currentTime {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+.temperature {
+  font-size: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
 }
 .btn {
+  margin-top: -20px;
+  margin-left: 15px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   font-size: 12px;
 }
-.extra-info {
+.logo-widget {
+  padding: 20px;
+  margin: -20px auto;
   font-size: 20px;
-  padding-left: 10px;
-
-  padding-bottom: 25px;
-  margin: 10;
-  line-height: 40px;
-
-  border-radius: 10px;
+  border-radius: 30px;
+  width: 250px;
 }
-.fa-wind {
-  color: #f5f5f5;
-  margin-right: 23px;
-}
-.fa-sun {
-  color: #f8c322;
-  margin-right: 23px;
-}
-.fa-tint {
-  color: #eff1e8;
-  margin-right: 23px;
-}
-.fa-moon {
-  color: #57585b;
-  margin-right: 23px;
-}
-
-.fa-feather {
-  color: #58af87;
-  margin-right: 20px;
-  margin-left: -10px;
-}
-
-.fa-temperature-high {
-  color: #c92727;
-  margin-right: 28px;
-  margin-left: -10px;
-}
-
-.fa-temperature-low {
-  color: #4a61e4;
-  margin-right: 28px;
-  margin-left: -10px;
-}
-
-.wind,
-.humidity,
-.sunset,
-.sunrise,
-.precipitation {
-  padding: 5px;
-  padding-top: 0;
+.description {
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
 }
 .list {
+  padding-top: 26px;
+  padding-left: 43px;
+  line-height: 40px;
 }
 
-.wind small {
-  margin-left: -7px;
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-.feelsLike small {
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-.min small {
-  margin-left: -7px;
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.max small {
-  margin-left: -7px;
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.sunrise small {
-  margin-left: -7px;
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-.sunset small {
-  margin-left: -7px;
-  font-size: 14px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.humidity small {
-  font-size: 14px;
-  margin-left: -3px;
-  color: black;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-.data {
-  padding: 1px;
-  font-weight: bold;
-  font-size: 12px;
-  color: black;
-  text-align: center;
-}
-.weather-image {
-  text-align: center;
-  width: 350px;
-  margin-top: 15px;
-}
 .fas,
 .far {
   font-size: 15px;
+  color: black;
+  margin-right: 20px;
+}
+.fa-wind {
+  margin-right: 16px;
+}
+.fa-sun {
+  margin-right: 16px;
+}
+.fa-moon {
+  margin-right: 16px;
+}
+
+.indicators {
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.data {
+  margin-left: 15px;
+  padding: 1px;
+  font-weight: bold;
+  font-size: 17px;
+  color: black;
+  font-family: "Quicksand", sans-serif;
+}
+.col-12 {
+  padding-right: 13px;
 }
 .card-header {
   font-size: 12px;
   text-transform: uppercase;
   padding: 5px;
-  color: grey;
-  font-weight: bolder;
+
+  color: black;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .card-body {
   font-size: 10px;
@@ -277,19 +201,28 @@ footer {
 .card {
   margin: 0 auto 10px 0;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  opacity: 0.9;
+  background-color: transparent;
   height: 99px;
 }
 .icon {
-  width: 48px;
-  margin-left: -13px;
+  width: 45px;
 }
 .week-degrees {
   margin-top: -20px;
+  margin-left: 7px;
   font-weight: bold;
-  font-size: 17px;
-  color: #4e6d52;
+  font-size: 16px;
+  color: black;
+  font-family: "Quicksand", sans-serif;
 }
-.description {
+.forecast-description {
   text-transform: capitalize;
+  font-weight: 500;
+  margin-left: 44px;
+  font-family: "Quicksand", sans-serif;
+}
+.forecast-time {
+  padding-left: 4px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 800;
 }
