@@ -149,4 +149,4 @@ let button = document.querySelector("#current-location");
 
 button.addEventListener("click", getCurrentPosition);
 
-searchedCity("Paris")
+searchedCity("Dublin,ie")
